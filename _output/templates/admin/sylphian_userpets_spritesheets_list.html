@@ -7,7 +7,7 @@
                 <xf:if is="!$ph.exists">
                     <li>{{ phrase_dynamic('sylphian_userpets_path_does_not_exist', {'path': $ph.path}) }}</li>
                     <xf:else />
-                    <li>{$ph.path} [readable: {{ $ph.readable ? 'yes' : 'no' }}, writable: {{ $ph.writable ? 'yes' : 'no' }}]</li>
+                    <li>{$ph.path} [{{ phrase('sylphian_userpets_readable_label') }}: {{ $ph.readable ? phrase('sylphian_userpets_yes') : phrase('sylphian_userpets_no') }}, {{ phrase('sylphian_userpets_writable_label') }}: {{ $ph.writable ? phrase('sylphian_userpets_yes') : phrase('sylphian_userpets_no') }}]</li>
                 </xf:if>
             </xf:foreach>
         </ul>
@@ -60,12 +60,13 @@
                             <xf:main label="{$f.name}" />
 
                             <xf:cell>
-							  <span class="u-muted">{{ $f.entity
-								? ("Frame size: {$f.entity.frame_width}×{$f.entity.frame_height}<br>
-								  Frames per animation: {$f.entity.frames_per_animation}<br>
-								  Frames per second: {$f.entity.fps}")
-								: '—'
-							  }}</span>
+                                <span class="u-muted">
+                                    <xf:if is="$f.entity">
+                                        {{ phrase_dynamic('sylphian_userpets_spritesheet_details', {'frame_width': $f.entity.frame_width, 'frame_height': $f.entity.frame_height, 'frames_per_animation': $f.entity.frames_per_animation, 'fps': $f.entity.fps})|raw }}
+                                    <xf:else />
+                                        {{ phrase('sylphian_userpets_not_available') }}
+                                    </xf:if>
+                                </span>
                             </xf:cell>
 
                             <xf:cell>{{ file_size($f.size) }}</xf:cell>

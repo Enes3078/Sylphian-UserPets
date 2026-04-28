@@ -1,1 +1,1 @@
-You completed the tutorial "{{ $extra.tutorial_title }}" and received {{ $extra.exp_amount }} XP for your pet!
+{{ phrase_dynamic('sylphian_userpets_alert_tutorial_complete', {'tutorial_title': $extra.tutorial_title, 'exp_amount': $extra.exp_amount}) }}
