@@ -1,0 +1,1 @@
+Could not accept duel request: {error}

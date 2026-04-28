@@ -1,0 +1,1 @@
+You completed the tutorial "{tutorial_title}" and received {exp_amount} XP for your pet!

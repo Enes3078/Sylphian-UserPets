@@ -114,7 +114,7 @@ class UserPetDuel
 			if (!$duel)
 			{
 				return new DuelChallengeResult(DuelChallengeResult::ERROR_UNKNOWN, null, [
-					'error' => 'Duel not found',
+					'error' => (string) \XF::phrase('sylphian_userpets_duel_error_not_found'),
 				]);
 			}
 
@@ -126,14 +126,14 @@ class UserPetDuel
 			if (!$pet || $duel->opponent_pet_id != $pet->pet_id)
 			{
 				return new DuelChallengeResult(DuelChallengeResult::ERROR_UNKNOWN, null, [
-					'error' => 'Cannot accept others duels',
+					'error' => (string) \XF::phrase('sylphian_userpets_duel_error_cannot_accept_others'),
 				]);
 			}
 
 			if ($duel->status != 'pending')
 			{
 				return new DuelChallengeResult(DuelChallengeResult::ERROR_UNKNOWN, null, [
-					'error' => 'Duel no longer pending',
+					'error' => (string) \XF::phrase('sylphian_userpets_duel_error_not_pending'),
 				]);
 			}
 
@@ -195,7 +195,7 @@ class UserPetDuel
 			if (!$duel)
 			{
 				return new DuelChallengeResult(DuelChallengeResult::ERROR_UNKNOWN, null, [
-					'error' => 'Duel not found',
+					'error' => (string) \XF::phrase('sylphian_userpets_duel_error_not_found'),
 				]);
 			}
 
@@ -207,14 +207,14 @@ class UserPetDuel
 			if (!$pet || $duel->opponent_pet_id != $pet->pet_id)
 			{
 				return new DuelChallengeResult(DuelChallengeResult::ERROR_UNKNOWN, null, [
-					'error' => 'Cannot reject others duels',
+					'error' => (string) \XF::phrase('sylphian_userpets_duel_error_cannot_reject_others'),
 				]);
 			}
 
 			if ($duel->status != 'pending')
 			{
 				return new DuelChallengeResult(DuelChallengeResult::ERROR_UNKNOWN, null, [
-					'error' => 'Duel no longer pending',
+					'error' => (string) \XF::phrase('sylphian_userpets_duel_error_not_pending'),
 				]);
 			}
 

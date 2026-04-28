@@ -173,7 +173,7 @@ class UserPetDuel extends AbstractController
 		if (!$result->isSuccess())
 		{
 			return $this->error(\XF::phrase('sylphian_userpets_duel_accept_failed', [
-				'error' => $result->getData()['error'] ?? 'Unknown error',
+				'error' => $result->getData()['error'] ?? \XF::phrase('sylphian_userpets_unknown_error'),
 			]));
 		}
 
@@ -207,7 +207,7 @@ class UserPetDuel extends AbstractController
 		if (!$result->isSuccess())
 		{
 			return $this->error(\XF::phrase('sylphian_userpets_duel_reject_failed', [
-				'error' => $result->getData()['error'] ?? 'Unknown error',
+				'error' => $result->getData()['error'] ?? \XF::phrase('sylphian_userpets_unknown_error'),
 			]));
 		}
 

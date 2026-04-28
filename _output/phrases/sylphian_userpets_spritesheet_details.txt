@@ -1,0 +1,1 @@
+Frame size: {frame_width}×{frame_height}<br>Frames per animation: {frames_per_animation}<br>Frames per second: {fps}
